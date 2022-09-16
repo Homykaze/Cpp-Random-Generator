@@ -1,8 +1,7 @@
 #include <iostream>
-using namespace std;
-
 // Prime number of reference
-const int PRIME_NUMBER = 211;
+#define PRIME_NUMBER 211
+using namespace std;
 
 //Linked list of 100 000 elements, it is used to store statistics about how many times a certain number is generated
 struct values
@@ -53,6 +52,13 @@ int main()
 	{
 		cout << "Number " << i << " is randomized " << statistics[i] << " times.\n";
 	}
+	// Loop to test user's inputs and outputs (outputs will always be the sam to the same inputs)
+	int input;
+	do {
+		cout << "Enter -1 to exit. Try your own input to generate a number: ";
+		cin >> input;
+		cout << getNumber(p_list, input) << endl;
+	} while (input != -1);
 }
 
 //We add numbers to the list and generate a random value right here
